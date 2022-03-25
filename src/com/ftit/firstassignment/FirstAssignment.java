@@ -1,4 +1,4 @@
-package com.ftit;
+package com.ftit.firstassignment;
 
 public class FirstAssignment {
 
@@ -12,6 +12,8 @@ public class FirstAssignment {
         System.out.println("The result for operation c is : " + calculateOperationC());
         System.out.println("The result for operation d is : " + calculateOperationD());
     }
+
+
 
     public static int sumOfTwoNumbers(int a, int b) {
         return a + b;
