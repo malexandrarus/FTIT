@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         printCalculatorResults();
         printLogicalOp();
+
     }
 
     public static void printCalculatorResults() {
@@ -34,6 +35,8 @@ public class Main {
         int f = 3;
         System.out.println("The Modulo of " + e + " and " + f + " is : " + calculator.moduloOfTwoNumbers(e, f));
 
+
+
     }
 
     public static void printLogicalOp() {
@@ -61,5 +64,42 @@ public class Main {
 
         System.out.println("The max number is: " + op.verifyBiggerNumber(19,13,10));
 
+        op.countFromNumberUntil100(1);
+
+        op.countDownFromNumber(0);
+
+        op.countFromXToY(20,26);
+
+        op.countMinToMaxNumber(4,10);
+
+        op.printEvenNumbers();
+
+        op.printOddNumbers();
+
+        System.out.println("The sum from first number to 100 is: " + op.calculateSumOfNumbers(1));
+
+        System.out.println("The average is: " + op.calculateAverageOfNumbers(1));
+
+        op.displayPattern();
+
+        op.countFromNumberUntil100WhileVersion(2);
+
+        op.countDownFromNumberWhileVersion(0);
+
+        op.countFromXToYWhileVersion(2, 9);
+
+        op.countMinToMaxNumberWhileVersion(4, 9);
+
+        op.printEvenNumbersWhileVersion();
+
+        op.printOddNumbersWhileVersion();
+
+        op.calculateAverageOfNumbersWhileVersion();
+
+        System.out.println("The average of numbers divisible by 7 is: " + op.calculateAverageOfNumbersDivisibleBy7(1, 22));
+
+        op.first20NumbersOfFibonacci();
+
+        op.CozaLozaWoza();
     }
 }
