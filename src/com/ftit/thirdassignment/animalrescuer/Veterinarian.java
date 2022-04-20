@@ -1,16 +1,30 @@
 package com.ftit.thirdassignment.animalrescuer;
 
-public class Veterinarian {
+public class Veterinarian extends Human {
 
-    private String name;
     private String specialization;
 
-    public String getName() {
-        return name;
+    public void animalConsultation() {
+        System.out.println("Veterinarian consultation");
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void animalSurgicalOperation() {
+        System.out.println("Veterinarian surgical operation");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Veterinarian eat behaviour");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Veterinarian sleep behaviour");
+    }
+
+    @Override
+    public void performHobby() {
+        System.out.println("Veterinarian preferred activities");
     }
 
     public String getSpecialization() {

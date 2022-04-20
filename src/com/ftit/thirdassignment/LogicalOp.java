@@ -1,5 +1,7 @@
 package com.ftit.thirdassignment;
 
+import java.util.Arrays;
+
 public class LogicalOp {
     /*
     This method is used for Exercise 3
@@ -337,7 +339,7 @@ public class LogicalOp {
         int x = 0;
         int y = 1;
         int counter = 0;
-        System.out.print( "The first 20 Fibonacci numbers are : " );
+        System.out.print("The first 20 Fibonacci numbers are : ");
         while (counter < 20) {
             System.out.print(x + " ");
             int z = y + x;
@@ -380,5 +382,207 @@ public class LogicalOp {
             j++;
         }
 
+    }
+
+    /*
+ This method is used for Exercise 2 for Java Arrays homework
+ */
+    public int[] populateArrayToNumber(int max) {
+        int[] myArray = new int[max];
+        for (int i = 0; i < myArray.length; i++) {
+            myArray[i] = i + 1;
+        }
+        return myArray;
+    }
+
+    /*
+    This method is used for Exercise 3 for Java Arrays homework
+ */
+    public int[] evenNumbersFromArray(int[] numbers) {
+        int i = 0;
+        int[] evenNumbers = new int[numbers.length / 2];
+        for (int number : numbers) {
+            if (isNumberEven(number)) {
+                evenNumbers[i] = number;
+                i++;
+            }
+        }
+        return evenNumbers;
+    }
+
+    /*
+ This method is used for Exercise 4 for Java Arrays homework
+*/
+    public double calculateAverageOfNumbersFromArray(int[] numbers) {
+        double sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
+        return sum / numbers.length;
+    }
+
+    /*
+  This method is used for Exercise 5 for Java Arrays homework
+*/
+    public boolean verifyStringOccurrence(String[] words, String sequence) {
+        boolean stringOccurs = false;
+        for (String word : words) {
+            if (word.contains(sequence)) {
+                stringOccurs = true;
+                break;
+            }
+        }
+        return stringOccurs;
+    }
+
+    /*
+    This method is used for Exercise 6 for Java Arrays homework
+ */
+    public int verifyNumberOccurrence(int[] numbersInt, int number) {
+        int poz = 0;
+        for (int i = 0; i < numbersInt.length; i++) {
+            if (numbersInt[i] == number) {
+                poz = i;
+                break;
+            }
+        }
+        return poz;
+    }
+
+    /*
+    This method is used for Exercise 7 for Java Arrays homework
+ */
+    public void printPattern() {
+        String[] patterns = new String[10];
+        Arrays.fill(patterns, "-");
+        for (String element : patterns) {
+            for (String pattern : patterns) {
+                System.out.print(pattern);
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+   This method is used for Exercise 8 for Java Arrays homework
+*/
+    public void verifyNumberFromArray(int[] numbers, int number) {
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == number) {
+                int[] arrayAfterDelete =  removeElement(numbers, i);
+                System.out.println(Arrays.toString(arrayAfterDelete));
+                break;
+            }
+        }
+    }
+
+    private int[] removeElement(int[] numbers, int index) {
+        int[] copy = new int[numbers.length - 1];
+        int j = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (i != index) {
+                copy[j] = numbers[i];
+                j++;
+            }
+        }
+        return copy;
+    }
+
+     /*
+   This method is used for Exercise 9 for Java Arrays homework
+*/
+    public void getSecondSmallestElement(int[] numbers) {
+        Arrays.sort(numbers);
+        System.out.println(numbers[1]);
+    }
+
+    /*
+    This method is used for Exercise 10 for Java Arrays homework
+*/
+    public void copyElementsFromAnArray(int[] numbers, int[] copy) {
+        for (int i = 0; i < numbers.length; i++) {
+            copy[i] = numbers[i];
+        }
+        System.out.println(Arrays.toString(copy));
+    }
+
+      /*
+    This method is used for Exercise 1 for Tema optionala - Java Arrays
+*/
+    public void insertElementAtPosition(int[] numbers, int index, int value) {
+        for (int i = numbers.length-1; i > index; i--){
+            numbers[i] = numbers[i-1];
+        }
+        numbers[index] = value;
+        System.out.println(Arrays.toString(numbers));
+    }
+
+    /*
+    This method is used for Exercise 2 for Tema optionala - Java Arrays
+*/
+    public void printMinMaxNumber(int[] numbers) {
+        int min = numbers[0];
+        int max = numbers[0];
+         for (int i = 0; i < numbers.length; i++) {
+             int currentIterationValue = numbers[i];
+            if (max < currentIterationValue) {
+                max = currentIterationValue;
+            }
+
+            if (min > currentIterationValue) {
+                min = currentIterationValue;
+            }
+        }
+        System.out.println("The min is " + min + " The max is " + max);
+    }
+
+      /*
+    This method is used for Exercise 3 for Tema optionala - Java Arrays
+*/
+    public void printReversedArray(int[] numbers) {
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
+        }
+    }
+     /*
+    This method is used for Exercise 4 for Tema optionala - Java Arrays
+*/
+    public void duplicateValuesFromArray(int[] numbers) {
+        for (int i = 0; i <= numbers.length - 1; i++) {
+            if (isNumberPresent(removeElement(numbers, i), numbers[i])) {
+                System.out.print(numbers[i] + " ");
+            }
+        }
+    }
+
+    private Boolean isNumberPresent(int[] numbers, int number) {
+        boolean isNumberPresent = false;
+        for (int num : numbers) {
+            if (num == number) {
+                isNumberPresent = true;
+            }
+        }
+        return isNumberPresent;
+    }
+
+    /*
+    This method is used for Exercise 5 for Tema optionala - Java Arrays
+*/
+    public void commonElements(String[] firstArray, String[] secondArray) {
+        for (int i = 0; i < firstArray.length; i++) {
+            if (verifyStringOccurrence(secondArray, firstArray[i])) {
+                System.out.println(secondArray[i] + " ");
+            }
+        }
+    }
+
+     /*
+    This method is used for Exercise 6 for Tema optionala - Java Arrays
+*/
+    public void orderElementsAsc(int[] numbers) {
+        Arrays.sort(numbers);
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
     }
 }

@@ -34,9 +34,15 @@ public class Main {
         int e = 10;
         int f = 3;
         System.out.println("The Modulo of " + e + " and " + f + " is : " + calculator.moduloOfTwoNumbers(e, f));
+    }
 
-
-
+    /*
+    Helper method that prints an array
+     */
+    public static void printArray(int[] array){
+        for (int i = 0; i< array.length; i++){
+            System.out.print(array[i]+", ");
+        }
     }
 
     public static void printLogicalOp() {
@@ -101,5 +107,62 @@ public class Main {
         op.first20NumbersOfFibonacci();
 
         op.CozaLozaWoza();
+
+        System.out.println();
+
+        int[] myArray = op.populateArrayToNumber(100);
+
+        printArray(myArray);
+
+        System.out.println();
+
+        printArray(op.evenNumbersFromArray(myArray));
+
+        System.out.println();
+        int [] numbers = {10, 9, 4};
+        System.out.println("The average is: " + op.calculateAverageOfNumbersFromArray(numbers));
+
+        System.out.println();
+        String[] words = {"animal", "human", "an" };
+        String sequence = "an";
+        System.out.println(op.verifyStringOccurrence(words,sequence));
+
+        int[] numbersInt = {10,5,8,9};
+        int number = 5;
+        System.out.println(op.verifyNumberOccurrence(numbersInt, number));
+
+        System.out.println();
+        op.printPattern();
+
+        System.out.println();
+        int[] numbersArr = {2,4,5,7,8};
+        op.verifyNumberFromArray(numbersArr,4);
+
+
+        System.out.println();
+        op.getSecondSmallestElement(new int[] {10, 50, 41, 12, 4});
+
+        System.out.println();
+        int numbersArray [] = {10,15,20,25,30};
+        int copy [] = new int[numbersArray.length];
+        op.copyElementsFromAnArray(numbersArray, copy);
+
+        System.out.println();
+        op.insertElementAtPosition(new int[] {10, 50, 41, 12, 4}, 1, 5);
+
+        System.out.println();
+        int[] num =  {10, 50, 41, 12, 4};
+        op.printMinMaxNumber(num);
+
+        op.printReversedArray(num);
+
+        System.out.println();
+        op.duplicateValuesFromArray(new int[] {1, 4, 5, 4, 2, 1});
+
+        System.out.println();
+        op.commonElements((new String[] {"white", "blue" , "purple"}), new String[] {"pink", "blue" , "beige"});
+
+        System.out.println();
+        op.orderElementsAsc(new int[] {10, 67, 55, 4, 21, 1});
     }
 }

@@ -10,6 +10,18 @@ public class Animal {
     private String favouriteFood;
     private String favouriteRecreationActivity;
 
+    public void eat() {
+        System.out.println("General animal eat behaviour");
+    }
+
+    public void sleep() {
+        System.out.println("General animal sleep behaviour");
+    }
+
+    public void play() {
+        System.out.println("General animal play behaviour");
+    }
+
     public String getName() {
         return name;
     }
