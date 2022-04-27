@@ -1,6 +1,6 @@
 package com.ftit.thirdassignment.animalrescuer;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private String type;
     private Integer age;
@@ -10,17 +10,11 @@ public class Animal {
     private String favouriteFood;
     private String favouriteRecreationActivity;
 
-    public void eat() {
-        System.out.println("General animal eat behaviour");
-    }
+    protected abstract void eat();
 
-    public void sleep() {
-        System.out.println("General animal sleep behaviour");
-    }
+    public abstract void sleep();
 
-    public void play() {
-        System.out.println("General animal play behaviour");
-    }
+    public abstract void play();
 
     public String getName() {
         return name;

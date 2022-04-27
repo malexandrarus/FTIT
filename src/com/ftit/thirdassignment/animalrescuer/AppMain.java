@@ -15,6 +15,29 @@ public class AppMain {
 
         AnimalFood animalFood = appMain.buildAnimalFoodData();
         RecreationActivity recreationActivity = appMain.buildRecreationActivityData();
+        System.out.println();
+
+        // Polymorphism
+        Animal animal = new Duck();
+        // this will call the methods implemented in Duck
+        animal.eat();
+        animal.sleep();
+        animal.play();
+        System.out.println();
+
+        animal = new Elephant();
+        // this will call the methods implemented in Elephant
+        animal.eat();
+        animal.sleep();
+        animal.play();
+        System.out.println();
+
+        animal = new Lion();
+        // this will call the methods implemented in Elephant
+        animal.eat();
+        animal.sleep();
+        animal.play();
+        System.out.println();
 
         // Start printing data for duck
         System.out.println("Duck name is: " + duck.getName());
@@ -66,7 +89,7 @@ public class AppMain {
         System.out.printf("Data about rescuer: name: %s, age: %d, hobbies: %s, sum of money: %f%n, number of adopted animals: %d",
                 rescuer.getName(), rescuer.getAge(), Arrays.toString(rescuer.getHobbies()), rescuer.getSumOfMoney(), rescuer.getNoOfAdoptedAnimals());
         // Start printing data for rescuer
-        System.out.printf("Data about veterinarian: name: %s, age: %d, hobbies: %s, specialization: %s" , veterinarian.getName(), veterinarian.getAge(), Arrays.toString(veterinarian.getHobbies()), veterinarian.getSpecialization());
+        System.out.printf("Data about veterinarian: name: %s, age: %d, hobbies: %s, specialization: %s", veterinarian.getName(), veterinarian.getAge(), Arrays.toString(veterinarian.getHobbies()), veterinarian.getSpecialization());
 
     }
 
