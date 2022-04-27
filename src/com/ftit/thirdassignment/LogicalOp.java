@@ -1,6 +1,8 @@
 package com.ftit.thirdassignment;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class LogicalOp {
     /*
@@ -469,7 +471,7 @@ public class LogicalOp {
     public void verifyNumberFromArray(int[] numbers, int number) {
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == number) {
-                int[] arrayAfterDelete =  removeElement(numbers, i);
+                int[] arrayAfterDelete = removeElement(numbers, i);
                 System.out.println(Arrays.toString(arrayAfterDelete));
                 break;
             }
@@ -488,8 +490,8 @@ public class LogicalOp {
         return copy;
     }
 
-     /*
-   This method is used for Exercise 9 for Java Arrays homework
+    /*
+  This method is used for Exercise 9 for Java Arrays homework
 */
     public void getSecondSmallestElement(int[] numbers) {
         Arrays.sort(numbers);
@@ -506,12 +508,12 @@ public class LogicalOp {
         System.out.println(Arrays.toString(copy));
     }
 
-      /*
-    This method is used for Exercise 1 for Tema optionala - Java Arrays
+    /*
+  This method is used for Exercise 1 for Tema optionala - Java Arrays
 */
     public void insertElementAtPosition(int[] numbers, int index, int value) {
-        for (int i = numbers.length-1; i > index; i--){
-            numbers[i] = numbers[i-1];
+        for (int i = numbers.length - 1; i > index; i--) {
+            numbers[i] = numbers[i - 1];
         }
         numbers[index] = value;
         System.out.println(Arrays.toString(numbers));
@@ -523,8 +525,8 @@ public class LogicalOp {
     public void printMinMaxNumber(int[] numbers) {
         int min = numbers[0];
         int max = numbers[0];
-         for (int i = 0; i < numbers.length; i++) {
-             int currentIterationValue = numbers[i];
+        for (int i = 0; i < numbers.length; i++) {
+            int currentIterationValue = numbers[i];
             if (max < currentIterationValue) {
                 max = currentIterationValue;
             }
@@ -536,16 +538,17 @@ public class LogicalOp {
         System.out.println("The min is " + min + " The max is " + max);
     }
 
-      /*
-    This method is used for Exercise 3 for Tema optionala - Java Arrays
+    /*
+  This method is used for Exercise 3 for Tema optionala - Java Arrays
 */
     public void printReversedArray(int[] numbers) {
         for (int i = numbers.length - 1; i >= 0; i--) {
             System.out.print(numbers[i] + " ");
         }
     }
-     /*
-    This method is used for Exercise 4 for Tema optionala - Java Arrays
+
+    /*
+   This method is used for Exercise 4 for Tema optionala - Java Arrays
 */
     public void duplicateValuesFromArray(int[] numbers) {
         for (int i = 0; i <= numbers.length - 1; i++) {
@@ -576,13 +579,136 @@ public class LogicalOp {
         }
     }
 
-     /*
-    This method is used for Exercise 6 for Tema optionala - Java Arrays
+    /*
+   This method is used for Exercise 6 for Tema optionala - Java Arrays
 */
     public void orderElementsAsc(int[] numbers) {
         Arrays.sort(numbers);
         for (int number : numbers) {
             System.out.print(number + " ");
+        }
+    }
+
+    /*
+   This method is used for Exercise 1 for Tema - Liste
+*/
+    public void displayValuesFromAList(List<Integer> list) {
+        for (Integer element : list) {
+            System.out.println(element);
+        }
+    }
+
+    /*
+   This method is used for Exercise 2 for Tema - Liste
+*/
+    public void addNumberAtTheEndOfTheList(List<Integer> list, int number) {
+        list.add(number);
+        System.out.println(list);
+    }
+
+    /*
+    This method is used for Exercise 3 for Tema - Liste
+*/
+    public void printListFromGivenNumber(List<Integer> list, int num) {
+        int startIndex = 0;
+        for (int j = 0; j < list.size(); j++) {
+            if (num == list.get(j)) {
+                startIndex = j;
+            }
+        }
+        for (int i = startIndex; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+
+    }
+
+    /*
+    This method is used for Exercise 4 for Tema - Liste
+*/
+    public void printReversedList(List<Integer> list) {
+        for (int i = list.size() - 1; i >= 0; i--) {
+            System.out.println(list.get(i));
+        }
+    }
+
+    /*
+    This method is used for Exercise 5 for Tema - Liste
+*/
+    public void addStringParamToList(List<String> stringList, int index, String strToBeAdded) {
+        for (int i = 0; i < stringList.size(); i++) {
+            if (index == i) {
+                stringList.add(index, strToBeAdded);
+            }
+        }
+        System.out.println(stringList);
+    }
+
+    /*
+    This method is used for Exercise 6 for Tema - Liste
+*/
+    public void addElementOnFirstPositionOnAList(List<Integer> list, int elementToBeAdded) {
+        list.add(0, elementToBeAdded);
+        System.out.println(list);
+    }
+
+    /*
+    This method is used for Exercise 7 for Tema - Liste
+*/
+    public void displayValuesAndIndexFromAList(List<Integer> list) {
+        for (int i = 0; i < list.size(); i++)
+            System.out.println("For position " + i + " the value is: " + list.get(i));
+    }
+
+    /*
+   This method is used for Exercise 8 for Tema - Liste
+*/
+    public void getBiggerNumber(List<Integer> list) {
+        int maxValue = 0;
+        for (Integer num : list) {
+            if (num > maxValue) {
+                maxValue = num;
+            }
+        }
+        System.out.println("The maximum value is: " + maxValue);
+    }
+
+    /*
+   This method is used for Exercise 1 for Tema optionala - Lists
+*/
+    public void changePositionForTwoElementsInAList(List<Integer> list, int i, int j) {
+        list.set(i, list.get(j));
+        list.set(j, list.get(i));
+        System.out.println(list);
+    }
+
+    /*
+   This method is used for Exercise 2 for Tema optionala - Lists
+*/
+    public void listOfEvenNumbers(List<Integer> list) {
+        List<Integer> evenNumber = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) % 2 == 0) {
+                evenNumber.add(list.get(i));
+            }
+        }
+        System.out.println(evenNumber);
+    }
+
+    /*
+   This method is used for Exercise 3 for Tema optionala - Lists
+*/
+    public void sortList(List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i) > list.get(j)) {
+                    int val = list.get(i);
+                    list.set(i, list.get(j));
+                    list.set(j, val);
+                }
+            }
+        }
+        for (int i : list) {
+            System.out.println(i);
         }
     }
 }
