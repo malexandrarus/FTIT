@@ -2,6 +2,7 @@ package com.ftit.thirdassignment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class LogicalOp {
@@ -710,5 +711,30 @@ public class LogicalOp {
         for (int i : list) {
             System.out.println(i);
         }
+    }
+
+    /*
+ This method is used for Exercise 5 for Tema - Try-Catch
+*/
+    public void getElementByIndex(int[] arr, int index) {
+        try {
+            System.out.println(arr[index]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Inside catch, number too large :" + e.getMessage());
+        }
+    }
+
+    /*
+  This method is used for Exercise 6 for Tema - Try-Catch
+*/
+    public void wait(int numberOfSec) {
+        int numberOfMilliSec = numberOfSec * 1000;
+        System.out.println("Time before sleep: " + new Date());
+        try {
+            Thread.sleep(numberOfMilliSec);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Time after sleep: " + new Date());
     }
 }
